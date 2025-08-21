@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Page</title>
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="Contact.css" />
+  </head>
+  <body>
+    <!-- Nav -->
+    <header>
+      <nav>
+        <div class="logo">
+          <h1>LOGO</h1>
+        </div>
+        <div class="nav-links">
+          <ul>
+            <a href="index.html#home" class="link">
+              <li>Home</li>
+            </a>
+            <a href="service.html" class="link">
+              <li>Services</li>
+            </a>
+            <a href="Team.html" class="link">
+              <li>Team</li>
+            </a>
+            <a href="about.html" class="link">
+              <li>About</li>
+            </a>
+            <a href="contact.html#contact" class="cont">
+              <li>Contact</li>
+            </a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="contact" id="contact">
+      <div class="contact-head">
+        <h1>Connect Us</h1>
+        <h2>
+          Your partner for digital transformation in Bhubaneswar, offering
+          state-of-the-art IT solutions that make a difference.
+        </h2>
+      </div>
+      <div class="contact-section">
+        <div class="contact-info">
+          <div class="info">
+            <h1>Contact Information</h1>
+            <p>
+              <i class="fa-solid fa-phone"></i>
+              +91 9945293599
+            </p>
+            <p>
+              <i class="fa-regular fa-envelope"></i>
+              info@Legalion.co.in
+            </p>
+            <p>
+              <i class="fa-solid fa-location-dot"></i>
+              Plot 10/10, Anantam Residency, Sabar sahi, Rasulgarh,
+              Bhubaneswar-751010
+            </p>
+          </div>
+          <div class="location">
+            <div id="map" style="height: 420px; width: 94%"></div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form action="/send-mail" method="POST" class="form-inp">
+            <span>
+              <label for="name">Full name*</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter Your Name"
+                required
+              />
+            </span>
+
+            <span>
+              <label for="company">Company Name*</label>
+              <input
+                type="text"
+                name="company"
+                id="company-name"
+                placeholder="Enter Your Company Name"
+              />
+            </span>
+            <span>
+              <label for="email">Email*</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter Your Email"
+                required
+              />
+            </span>
+            <span>
+              <label for="service">Select Service</label>
+              <select name="service" required>
+                <option value="">Select Service</option>
+                <option value="corporate compliance">
+                  Corporate Compliance
+                </option>
+                <option value="international law">International Law</option>
+                <option value="regulatory advisory">Regulatory Advisory</option>
+                <option value="business formation">Business Formation</option>
+                <option value="contract law">Contract Law</option>
+                <option value="dispute resolution">Dispute Resolution</option>
+              </select>
+            </span>
+            <span>
+              <label for="details">Project Details*</label>
+              <textarea
+                type="text"
+                name="details"
+                id="name"
+                placeholder="Tell us more about your project"
+              ></textarea>
+            </span>
+          </form>
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var map = L.map("map").setView([20.2928844, 85.8566821], 13);
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+        }).addTo(map);
+
+        var marker = L.marker([20.2928844, 85.8566821]).addTo(map);
+        marker
+          .bindPopup(
+            "Plot 10/10, Anantam Residency, Sabar sahi, Rasulgarh, Bhubaneswar-751010"
+          )
+          .openPopup();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- Nav -->
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="Images/logo.png" alt="logo" />
+        </div>
+        <div class="nav-links">
+          <ul>
+            <a href="index.html#home" class="nav-l link">
+              <li>Home</li>
+            </a>
+            <a href="service.html" class="nav-l link">
+              <li>Services</li>
+            </a>
+            <a href="Team.html" class="nav-l link">
+              <li>Team</li>
+            </a>
+            <a href="about.html" class="nav-l link">
+              <li>About</li>
+            </a>
+            <a href="contact.html#contact" class="nav-l cont">
+              <li>Contact</li>
+            </a>
+          </ul>
+        </div>
+        <div class="hamb">
+          <i class="fa-solid fa-bars ham-burg"></i>
+        </div>
+      </nav>
+    </header>
+
+    <script>
+      const hamburg = document.querySelector(".ham-burg");
+      const navLinks = document.querySelector(".nav-links");
+      const navItems = document.querySelectorAll(".nav-l");
+
+      hamburg.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      navItems.forEach(list, () => {
+        list.addEventListener("click", () => {
+          navLinks.classList.toggle("remove");
+        });
+      });
+    </script>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="h1-1">
+            Driving your<br /><span>success with</span><br /><span
+              >reliable IT support.</span
+            >
+          </h1>
+          <h1 class="h1-2">
+            Take charge of your business continuity with innovative IT Solution.
+          </h1>
+          <div class="btns">
+            <a href="#contact" class="btn-1" style="border: 3.5px solid #fa911a">
+              <span>Schedule a free consultant</span>
+            </a>
+            <a href="#contact" class="btn-2" style="border: 3.5px solid #ff0000">
+              <span>Our Services</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="Images/Hero-img.svg" alt="Hero-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer -->
+    <section class="customer" id="customer">
+      <div class="customer-container">
+        <div class="our-service">
+          <div class="sec sec-1">
+            <img
+              width="65"
+              height="65"
+              src="https://img.icons8.com/fluency/48/order-completed.png"
+              alt="order-completed"
+            />
+            <span>
+              <h1>50+</h1>
+              <h2>Active Projects</h2>
+            </span>
+          </div>
+          <div class="sec sec-2">
+            <img
+              width="100"
+              height="100"
+              src="https://img.icons8.com/external-filled-color-icons-papa-vector/78/external-Happy-Customer-video-game-design-filled-color-icons-papa-vector.png"
+              alt="external-Happy-Customer-video-game-design-filled-color-icons-papa-vector"
+            />
+            <span>
+              <h1>35+</h1>
+              <h2>Happy Customers</h2>
+            </span>
+          </div>
+          <div class="sec sec-3">
+            <img
+              width="70"
+              height="70"
+              src="https://img.icons8.com/external-others-cattaleeya-thongsriphong/50/external-backpack-school-color-line-others-cattaleeya-thongsriphong-6.png"
+              alt="external-backpack-school-color-line-others-cattaleeya-thongsriphong-6"
+            />
+            <span>
+              <h1>100%</h1>
+              <h2>Certification</h2>
+            </span>
+          </div>
+          <div class="sec sec-4">
+            <img
+              width="70"
+              height="70"
+              src="https://img.icons8.com/badges/48/internship.png"
+              alt="internship"
+            />
+            <span>
+              <h1>25+</h1>
+              <h2>Years Experience</h2>
+            </span>
+          </div>
+        </div>
+        <div class="about-us">
+          <div class="images">
+            <span>
+              <img src="Images/law1.jpg" alt="law" />
+            </span>
+            <span>
+              <img src="Images/law2.jpg" alt="law" />
+            </span>
+            <span>
+              <img src="Images/law3.jpg" alt="law" />
+            </span>
+            <span>
+              <img src="Images/law5.webp" alt="law" />
+            </span>
+          </div>
+          <div class="video">
+            <iframe
+              width="100%"
+              height="400"
+              src="https://www.youtube.com/embed/Bv4864T-C-A?autoplay=1&mute=1"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client -->
+    <section class="client" id="client">
+      <div class="client-container">
+        <h1>Our Clients</h1>
+        <div class="clients"></div>
+      </div>
+    </section>
+
+    <!-- We Serve -->
+    <section class="industry" id="industry">
+      <div class="industry-container">
+        <h1>Industries we provide</h1>
+        <p>
+          Discover the wide range of industries we empower with tailored
+          solutions. From finance, healthcare, and education to manufacturing,
+          retail, and technology, our expertise adapts to your sector’s unique
+          challenges. Explore how we help each industry thrive with smart,
+          scalable strategies.
+        </p>
+        <div class="indus-cards">
+          <div class="indus-card ind-card-1">
+            <img
+              width="45"
+              height="45"
+              src="https://img.icons8.com/officel/45/palace.png"
+              alt="palace"
+            />
+            <p>Business & Entrepreneurship</p>
+          </div>
+
+          <div class="indus-card ind-card-2">
+            <img
+              width="45"
+              height="45"
+              src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/50/external-social-media-marketing-digital-nomad-flaticons-lineal-color-flat-icons-2.png"
+              alt="palace"
+            />
+            <p>Social Media Marketing</p>
+          </div>
+
+          <div class="indus-card ind-card-3">
+            <img
+              width="45"
+              height="45"
+              src="https://img.icons8.com/fluency/48/imac-settings.png"
+              alt="palace"
+            />
+            <p>Web Development</p>
+          </div>
+
+          <div class="indus-card ind-card-4">
+            <img
+              width="45"
+              height="45"
+              src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-health-care-inhome-service-flaticons-flat-flat-icons-4.png"
+              alt="palace"
+            />
+            <p>Health Care</p>
+          </div>
+
+          <div class="indus-card ind-card-5">
+            <img
+              width="45"
+              height="45"
+              src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/50/external-project-management-gig-economy-flaticons-lineal-color-flat-icons.png"
+              alt="palace"
+            />
+            <p>Project Management</p>
+          </div>
+
+          <div class="indus-card ind-card-6">
+            <img
+              width="45"
+              height="45"
+              src="https://img.icons8.com/external-illustrations-smashing-stocks/50/external-Financial-Planning-economy-illustration-illustrations-smashing-stocks.png"
+              alt="palace"
+            />
+            <p>Financial Planning</p>
+          </div>
+
+          <div class="indus-card ind-card-7">
+            <img
+              width="45"
+              height="45"
+              src="https://img.icons8.com/dusk/50/web-design.png"
+              alt="palace"
+            />
+            <p>UX/UI Design Principles</p>
+          </div>
+
+          <div class="indus-card ind-card-8">
+            <img
+              width="45"
+              height="45"
+              src="https://img.icons8.com/nolan/64/online-order.png"
+              alt="palace"
+            />
+            <p>E-commerce</p>
+          </div>
+
+          <div class="indus-card ind-card-9">
+            <img
+              width="45"
+              height="45"
+              src="https://img.icons8.com/color/48/leadership--v2.png"
+              alt="palace"
+            />
+            <p>Leadership and Management</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service -->
+    <div class="service" id="service">
+      <div class="service-container">
+        <div class="container-1">
+          <div class="serv serv-1">
+            <img src="Images/services/legal-advice.png" alt="legal" />
+            <h2>Legal Support</h2>
+          </div>
+          <div class="serv serv-1">
+            <img src="Images/services/study.png" alt="legal" />
+            <h2 style="text-align: center">Learning and Development</h2>
+          </div>
+          <div class="serv serv-1">
+            <img src="Images/services/doctor-patient.png" alt="legal" />
+            <h2>Consulting & Solutioning</h2>
+          </div>
+          <div class="serv serv-1">
+            <img src="Images/services/legal-advice.png" alt="legal" />
+            <h2>Legal Support</h2>
+          </div>
+        </div>
+        <div class="container-2">
+          <h1 style="font-size: 2.7rem; font-weight: bold">
+            Services <span style="color: #fa911a">we provide</span>
+          </h1>
+          <h1 style="text-align: center; font-weight: 400">
+            Get Everything you need effortlessly, with seamless integration that
+            puts all your digital tools together!
+          </h1>
+          <p style="text-align: center; font-size: 1rem">
+            Discover a range o solutions tailored to drive you business to new
+            heights. Whether you're seeking cutting edge software development or
+            seamless digital transformation, we're dedicated to steering you
+            towards your success. Let us pave the way for you growth with our
+            expertise in innovation software solutions and flawless digital
+            strategies
+          </p>
+        </div>
+        <div class="container-3">
+          <div class="card card-1">
+            <span class="icon">🏢</span>
+            <span class="head">LEGAL</span>
+            <span class="des">
+              Comprehensive compliance solutions for businesses across various
+              industries and jurisdictions.
+            </span>
+            <span>
+              <ul>
+                <li>✔ &nbsp;Banking and IBC</li>
+                <li>✔ &nbsp;Alternative Dispute Resolutions</li>
+                <li>✔ &nbsp;White Collar Criminal Compilance</li>
+                <li>✔ &nbsp;Corporate Governance</li>
+              </ul>
+            </span>
+            <a
+              class="learn-btn"
+              style="margin-top: 3.8rem"
+              href="/services/legal-service"
+            >
+              <span>Learn More</span>
+            </a>
+          </div>
+          <div class="card card-3">
+            <span class="icon">🌐</span>
+            <span class="head">INFORMATION TECHNOLOGY</span>
+            <span class="des"
+              >Cross-border legal services for businesses operating in multiple
+              countries.</span
+            >
+            <span>
+              <ul>
+                <li>✔ &nbsp;Oracle project Management Implementation</li>
+                <li>✔ &nbsp;Sales Force Implementation</li>
+                <li>✔ &nbsp;Customized Application Development</li>
+              </ul>
+            </span>
+            <a
+              class="learn-btn"
+              style="margin-top: 2rem"
+              href="/services/IT-service"
+            >
+              <span>Learn More</span>
+            </a>
+          </div>
+          <div class="card card-4">
+            <span class="icon">🚀</span>
+            <span class="head">DIGITAL MARKETING</span>
+            <span class="des"
+              >Complete solution with webpage, SEO, Funnel Creations, Lead
+              Generations, Digital Advertising</span
+            >
+            <span>
+              <ul>
+                <li>✔ &nbsp;AI Enabled Digital Content Creation</li>
+                <li>✔ &nbsp;Digital Advertising</li>
+                <li>✔ &nbsp;Google Business Enablement</li>
+                <li>✔ &nbsp;Social Media Marketing</li>
+                <li>✔ &nbsp;Email Marketing</li>
+              </ul>
+            </span>
+            <a
+              class="learn-btn"
+              style="margin-top: 1.7rem"
+              href="/services/business-branding"
+            >
+              <span>Learn More</span>
+            </a>
+          </div>
+          <div class="card card-5">
+            <span class="icon">📄</span>
+            <span class="head">CONSULTING</span>
+            <span class="des"
+              >Consulting Of Data Transformations , Business Due Dilligence ,
+              Merger & Acquitions, Application Modernizations</span
+            >
+            <span>
+              <ul>
+                <li>✔ &nbsp;Data transformation & Modernization consulting</li>
+                <li>✔ &nbsp;Application Modernization</li>
+                <li>✔ &nbsp;Oracle E B S-Process Improvement consulting</li>
+              </ul>
+            </span>
+            <a class="learn-btn" href="/services/consulting">
+              <span>Learn More</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team -->
+    <section class="team-section" id="team">
+      <div class="team-container">
+        <h2 class="team-title">Team</h2>
+        <div class="team-grid">
+          <div class="team-card member-1">
+            <div class="team-member">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3 class="team-name">Srittam Das</h3>
+            <p class="team-role">Chief Executive Consultant</p>
+            <p class="team-domain">IT, Finance, Law</p>
+            <hr />
+            <div class="team-meta">
+              <span>25+ Years</span>
+              <span>MBA , LLB, CA</span>
+            </div>
+          </div>
+
+          <div class="team-card member-2">
+            <div class="team-member">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3 class="team-name">Anuraj Das</h3>
+            <p class="team-role">Director</p>
+            <p class="team-domain">Marketing</p>
+            <hr />
+            <div class="team-meta">
+              <span>1+ Years</span>
+              <span>BBA International Marketing</span>
+            </div>
+          </div>
+
+          <div class="team-card member-3">
+            <div class="team-member">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3 class="team-name">Jyoti Prasad Tripathy</h3>
+            <p class="team-role">IT Director</p>
+            <p class="team-domain">IT, Digital Marketing</p>
+            <hr />
+            <div class="team-meta">
+              <span>13+ Years</span>
+              <span>BE</span>
+            </div>
+          </div>
+
+          <div class="team-card member-4">
+            <div class="team-member">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3 class="team-name">Subhankar Dash</h3>
+            <p class="team-role">IT Consultant</p>
+            <p class="team-domain">WEB Design Expert</p>
+            <hr />
+            <div class="team-meta">
+              <span>1+ Years</span>
+              <span>MCA</span>
+            </div>
+          </div>
+
+          <div class="team-card member-5">
+            <div class="team-member">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3 class="team-name">Smrutirekha Das</h3>
+            <p class="team-role">Content Creator</p>
+            <p class="team-domain">Content Design</p>
+            <hr />
+            <div class="team-meta">
+              <span>1+ Years</span>
+              <span>MCA</span>
+            </div>
+          </div>
+
+          <div class="team-card member-6">
+            <div class="team-member">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3 class="team-name">Subham Sahu</h3>
+            <p class="team-role">Software Engineer</p>
+            <p class="team-domain">MERN Developer</p>
+            <hr />
+            <div class="team-meta">
+              <span>1+ Years</span>
+              <span>B.Com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Review -->
+    <section class="review" id="review">
+      <div class="review-container">
+        <h2>What Our Clients Say</h2>
+        <div class="video">
+          <iframe
+            width="100%"
+            height="400"
+            src="https://www.youtube.com/embed/Bv4864T-C-A?autoplay=1&mute=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <div class="contact" id="contact">
+      <div class="contact-head">
+        <h1>Connect Us</h1>
+        <h2>
+          Your partner for digital transformation in Bhubaneswar, offering
+          state-of-the-art IT solutions that make a difference.
+        </h2>
+      </div>
+      <div class="contact-section">
+        <div class="contact-info">
+          <div class="info">
+            <h1>Contact Information</h1>
+            <p>
+              <i class="fa-solid fa-phone"></i>
+              +91 9945293599
+            </p>
+            <p>
+              <i class="fa-regular fa-envelope"></i>
+              info@Legalion.co.in
+            </p>
+            <p>
+              <i class="fa-solid fa-location-dot"></i>
+              Plot 10/10, Anantam Residency, Sabar sahi, Rasulgarh,
+              Bhubaneswar-751010
+            </p>
+          </div>
+          <div class="location">
+            <div
+              id="map"
+              style="height: 420px; width: 85%; border: 2px solid red"
+            >
+              <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                  var map = L.map("map").setView([20.2928844, 85.8566821], 13);
+
+                  L.tileLayer(
+                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    {
+                      attribution:
+                        '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+                    }
+                  ).addTo(map);
+
+                  var marker = L.marker([20.2928844, 85.8566821]).addTo(map);
+                  marker
+                    .bindPopup(
+                      "Plot 10/10, Anantam Residency, Sabar sahi, Rasulgarh, Bhubaneswar-751010"
+                    )
+                    .openPopup();
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form action="/send-mail" method="POST" class="form-inp">
+            <span>
+              <label for="name">Full name*</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter Your Name"
+                required
+              />
+            </span>
+
+            <span>
+              <label for="company">Company Name*</label>
+              <input
+                type="text"
+                name="company"
+                id="company-name"
+                placeholder="Enter Your Company Name"
+              />
+            </span>
+            <span>
+              <label for="email">Email*</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter Your Email"
+                required
+              />
+            </span>
+            <span>
+              <label for="service">Select Service</label>
+              <select name="service" required>
+                <option value="">Select Service</option>
+                <option value="corporate compliance">
+                  Corporate Compliance
+                </option>
+                <option value="international law">International Law</option>
+                <option value="regulatory advisory">Regulatory Advisory</option>
+                <option value="business formation">Business Formation</option>
+                <option value="contract law">Contract Law</option>
+                <option value="dispute resolution">Dispute Resolution</option>
+              </select>
+            </span>
+            <span>
+              <label for="details">Project Details*</label>
+              <textarea
+                type="text"
+                name="details"
+                id="name"
+                placeholder="Tell us more about your project"
+              ></textarea>
+            </span>
+          </form>
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Services -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const containers = document.querySelectorAll(
+          ".container-1, .container-2, .card-1, .card-3, .card-4, .card-5"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Prevents repeated triggers
+              }
+            });
+          },
+          {
+            threshold: 0.01,
+          }
+        );
+
+        containers.forEach((container) => observer.observe(container));
+      });
+    </script>
+
+    <!-- Team -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const containers = document.querySelectorAll(
+          ".team-title, .member-1, .member-2, .member-3, .member-4, .member-5, .member-6"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.01,
+          }
+        );
+
+        containers.forEach((container) => observer.observe(container));
+      });
+    </script>
+
+    <!-- Review -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".review-card");
+        let currentIndex = 0;
+
+        function showCard(index) {
+          cards.forEach((card, i) => {
+            if (i === index) {
+              card.classList.add("active");
+            } else {
+              card.classList.remove("active");
+            }
+          });
+        }
+
+        showCard(currentIndex); // Show first card initially
+
+        setInterval(() => {
+          currentIndex = (currentIndex + 1) % cards.length;
+          showCard(currentIndex);
+        }, 4000);
+      });
+    </script>
+
+    <!-- Contact -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const containers = document.querySelectorAll(
+          ".contact-head, .contact-info, .contact-form"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.01,
+          }
+        );
+
+        containers.forEach((container) => observer.observe(container));
+      });
+    </script>
+  </body>
+</html>
