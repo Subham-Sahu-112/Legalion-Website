@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
     <link rel="stylesheet" href="legal.css" />
   </head>
   <body>
@@ -11,29 +23,45 @@
     <header>
       <nav>
         <div class="logo">
-          <h1>LOGO</h1>
+          <img src="Images/logo.png" alt="logo" />
         </div>
         <div class="nav-links">
           <ul>
-            <a href="index.html#home" class="link">
+            <a href="index.html#home" class="nav-l link">
               <li>Home</li>
             </a>
-            <a href="service.html" class="link">
+            <a href="service.html" class="nav-l link">
               <li>Services</li>
             </a>
-            <a href="Team.html" class="link">
-              <li>Team</li>
-            </a>
-            <a href="about.html" class="link">
+            <a href="about.html" class="nav-l link">
               <li>About</li>
             </a>
-            <a href="contact.html#contact" class="cont">
+            <a href="contact.html#contact" class="nav-l cont">
               <li>Contact</li>
             </a>
           </ul>
         </div>
+        <div class="hamb">
+          <i class="fa-solid fa-bars ham-burg"></i>
+        </div>
       </nav>
     </header>
+
+    <script>
+      const hamburg = document.querySelector(".ham-burg");
+      const navLinks = document.querySelector(".nav-links");
+      const navItems = document.querySelectorAll(".nav-l");
+
+      hamburg.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      navItems.forEach(list, () => {
+        list.addEventListener("click", () => {
+          navLinks.classList.toggle("remove");
+        });
+      });
+    </script>
 
     <!-- services -->
     <div class="services">
@@ -298,7 +326,7 @@
                     allowing parties to reach mutually agreeable outcomes with
                     the help of neutral third parties.
                   </p>
-                  <h2 style="margin-left: 1rem">Our ADR Services Include:</h2>
+                  <h2 class="h2-1" style="margin-left: 1rem">Our ADR Services Include:</h2>
                   <ul style="margin-left: 2rem">
                     <li>Mediation:</li>
                     <p style="width: 70%; font-size: 1rem">
@@ -354,12 +382,12 @@
                   <h2 style="margin-left: 1rem">
                     What Is Value Added Legal Consulting?
                   </h2>
-                  <p style="width: 70%; font-size: 1rem; margin-left: 1rem">
+                  <p class="desc-1" style="width: 70%; font-size: 1rem; margin-left: 1rem">
                     Value Added Consulting goes beyond traditional legal advice.
                     It combines legal knowledge with industry-specific insight,
                     risk management, and strategic planning to help clients:
                   </p>
-                  <ul style="margin-left: 2rem">
+                  <ul class="ul-4" style="margin-left: 2rem">
                     <li>Make smarter decisions</li>
                     <li>Anticipate and prevent legal issues</li>
                     <li>Improve operational efficiency</li>
@@ -367,7 +395,7 @@
                     <li>Align legal strategies with business goals</li>
                   </ul>
                 </ul>
-                <p style="width: 70%; font-size: 1rem; margin-left: 2rem">
+                <p class="desc" style="width: 70%; font-size: 1rem; margin-left: 2rem">
                   This service is ideal for clients who need more than just
                   reactive legal solutions — it's for those who want proactive,
                   forward-thinking guidance.
@@ -375,7 +403,7 @@
                 <h2 style="margin-left: 2rem">
                   What We Offer Through Value Added Consulting:
                 </h2>
-                <ul style="margin-left: 3rem">
+                <ul class="ul-3" style="margin-left: 3rem">
                   <li>Legal Risk Assessment & Prevention:</li>
                   <p style="width: 70%; font-size: 1rem">
                     Identify potential legal risks early and implement
@@ -424,11 +452,11 @@
               <a class="quote-btn" href="/contact-us">
                 <span>Get a Quote</span>
               </a>
-              <span style="top: -3%" class="img">
+              <span style="top: -3%" class="img vid-1">
                 <iframe
                   width="90%"
                   height="95%"
-                  src="https://www.youtube.com/embed/SmqJ1DrT58c?autoplay=1&mute=1"
+                  src="https://www.youtube.com/embed/K4FIEKLh7h4?autoplay=1&mute=1"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -436,11 +464,11 @@
                 >
                 </iframe>
               </span>
-              <span style="top: 25%" class="img">
+              <span style="top: 25%" class="img vid-2">
                 <iframe
                   width="90%"
                   height="95%"
-                  src="https://www.youtube.com/embed/SmqJ1DrT58c?autoplay=1&mute=1"
+                  src="https://www.youtube.com/embed/K4FIEKLh7h4?autoplay=1&mute=1"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -448,11 +476,11 @@
                 >
                 </iframe>
               </span>
-              <span style="top: 53%" class="img">
+              <span style="top: 53%" class="img vid-3">
                 <iframe
                   width="90%"
                   height="95%"
-                  src="https://www.youtube.com/embed/SmqJ1DrT58c?autoplay=1&mute=1"
+                  src="https://www.youtube.com/embed/K4FIEKLh7h4?autoplay=1&mute=1"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -460,11 +488,11 @@
                 >
                 </iframe>
               </span>
-              <span style="top: 76%" class="img">
+              <span style="top: 76%" class="img vid-4">
                 <iframe
                   width="90%"
                   height="95%"
-                  src="https://www.youtube.com/embed/SmqJ1DrT58c?autoplay=1&mute=1"
+                  src="https://www.youtube.com/embed/K4FIEKLh7h4?autoplay=1&mute=1"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

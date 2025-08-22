@@ -23,29 +23,45 @@
     <header>
       <nav>
         <div class="logo">
-          <h1>LOGO</h1>
+          <img src="Images/logo.png" alt="logo" />
         </div>
         <div class="nav-links">
           <ul>
-            <a href="index.html#home" class="link">
+            <a href="index.html#home" class="nav-l link">
               <li>Home</li>
             </a>
-            <a href="service.html" class="link">
+            <a href="service.html" class="nav-l link">
               <li>Services</li>
             </a>
-            <a href="Team.html" class="link">
-              <li>Team</li>
-            </a>
-            <a href="about.html" class="link">
+            <a href="about.html" class="nav-l link">
               <li>About</li>
             </a>
-            <a href="contact.html#contact" class="cont">
+            <a href="contact.html#contact" class="nav-l cont">
               <li>Contact</li>
             </a>
           </ul>
         </div>
+        <div class="hamb">
+          <i class="fa-solid fa-bars ham-burg"></i>
+        </div>
       </nav>
     </header>
+
+    <script>
+      const hamburg = document.querySelector(".ham-burg");
+      const navLinks = document.querySelector(".nav-links");
+      const navItems = document.querySelectorAll(".nav-l");
+
+      hamburg.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      navItems.forEach(list, () => {
+        list.addEventListener("click", () => {
+          navLinks.classList.toggle("remove");
+        });
+      });
+    </script>
 
     <!-- Service -->
     <div class="services">

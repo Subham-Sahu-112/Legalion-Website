@@ -43,15 +43,16 @@ nav {
 }
 
 .logo {
-  width: 30%;
+  width: 20%;
+  height: auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.logo h1 {
-  font-size: 3rem;
-  color: white;
+.logo img {
+  width: 220px;
+  height: auto;
 }
 
 .nav-links {
@@ -114,6 +115,68 @@ nav {
   box-shadow: inset 0px 0px 10px 2px rgba(255, 255, 255, 0.8);
 }
 
+@media (max-width: 480px) {
+  nav {
+    height: 100px;
+    padding: 0 1rem;
+  }
+  .logo {
+    width: 40%;
+  }
+  .logo img {
+    width: 150px;
+  }
+  .nav-links {
+    height: max-content;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 1rem;
+    display: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    padding: 3rem 0;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    animation: menu 0.8s ease forwards;
+  }
+  @keyframes menu {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .nav-links ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+    padding-left: 3rem;
+  }
+  .nav-links ul li {
+    font-size: 1.5rem;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .hamb i {
+    font-size: 2rem;
+  }
+  .cont {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: none;
+    box-shadow: none;
+    margin-left: -1.3rem;
+  }
+}
+
 /* services */
 .services {
   width: 100%;
@@ -138,8 +201,9 @@ nav {
   width: 100%;
 }
 .service-head h1 {
-  font-size: 3rem;
   width: 100%;
+  font-size: 3rem;
+  color: orange;
   text-align: center;
   margin-top: 5rem;
 }
@@ -236,4 +300,124 @@ nav {
 }
 .quote-btn:hover {
   transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .all-services .service {
+    gap: 1rem;
+  }
+  .service-head h1 {
+    font-size: 2rem;
+    text-shadow: 0px 0px 40px yellow;
+    margin-top: 2rem;
+  }
+  .legal h1 {
+    width: 100%;
+    font-size: 1.7rem !important;
+    text-align: center;
+  }
+  .legal h2 {
+    width: 100%;
+    font-size: 1.3rem !important;
+    text-align: center;
+  }
+  .legal-info {
+    width: 100%;
+  }
+  .legal-info .h2-1 {
+    text-align: start;
+    padding-left: 1rem;
+  }
+  .legal-info p {
+    width: 100% !important;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  .legal-info ul {
+    margin: 0;
+  }
+  .legal-info ul li {
+    font-size: 1.3rem !important;
+    margin-left: 1.5rem !important;
+  }
+  .legal-info ul p {
+    width: 95% !important;
+    text-align: start;
+    margin-left: 0;
+  }
+  .legal-info h2 {
+    font-size: 1.3rem;
+  }
+  .legal-info ul ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 1rem !important;
+  }
+  .legal-info ul ul li {
+    font-size: 1.2rem !important;
+  }
+  .legal-info ul ul p {
+    width: 90% !important;
+    margin-left: 1.5rem !important;
+  }
+  .legal-info h2 {
+    margin-left: 0 !important;
+  }
+  .legal-info ul h2 {
+    margin-left: 0 !important;
+  }
+  .legal-info .ul-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 0 !important;
+  }
+  .legal-info .ul-3 li {
+    margin-left: 1rem !important;
+    font-size: 1.2rem !important;
+  }
+  .legal-info .ul-3 p {
+    margin-left: 1rem !important;
+  }
+  .legal-info .ul-4 li {
+    font-size: 1.1rem !important;
+  }
+  .legal-info .desc-1 {
+    width: 96% !important;
+    padding-left: 0.5rem;
+    margin-left: 0 !important;
+  }
+  .legal-info .desc {
+    margin-left: 0 !important;
+  }
+  .img-info {
+    flex-direction: column;
+  }
+  .img {
+    width: 100%;
+    position: relative;
+  }
+  .img iframe {
+    min-height: 550px;
+  }
+  .vid-2 {
+    display: none;
+  }
+  .vid-2 {
+    display: none;
+  }
+  .vid-3 {
+    display: none;
+  }
+  .vid-4 {
+    display: none;
+  }
+  .quote-btn {
+    position: relative;
+    order: 2;
+    left: 0;
+    margin-top: 2rem;
+  }
 }

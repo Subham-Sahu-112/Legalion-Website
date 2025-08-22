@@ -23,31 +23,32 @@
     <header>
       <nav>
         <div class="logo">
-          <h1>LOGO</h1>
+          <img src="Images/logo.png" alt="logo" />
         </div>
         <div class="nav-links">
           <ul>
-            <a href="index.html#home" class="link">
+            <a href="index.html#home" class="nav-l link">
               <li>Home</li>
             </a>
-            <a href="service.html" class="link">
+            <a href="service.html" class="nav-l link">
               <li>Services</li>
             </a>
-            <a href="Team.html" class="link">
-              <li>Team</li>
-            </a>
-            <a href="about.html" class="link">
+            <a href="about.html" class="nav-l link">
               <li>About</li>
             </a>
-            <a href="contact.html#contact" class="cont">
+            <a href="contact.html#contact" class="nav-l cont">
               <li>Contact</li>
             </a>
           </ul>
         </div>
+        <div class="hamb">
+          <i class="fa-solid fa-bars ham-burg"></i>
+        </div>
       </nav>
     </header>
 
-    <section class="contact" id="contact">
+    <!-- Contact -->
+    <div class="contact" id="contact">
       <div class="contact-head">
         <h1>Connect Us</h1>
         <h2>
@@ -59,22 +60,43 @@
         <div class="contact-info">
           <div class="info">
             <h1>Contact Information</h1>
-            <p>
+            <p class="mobile">
               <i class="fa-solid fa-phone"></i>
               +91 9945293599
             </p>
-            <p>
+            <p class="email">
               <i class="fa-regular fa-envelope"></i>
               info@Legalion.co.in
             </p>
-            <p>
+            <p class="address">
               <i class="fa-solid fa-location-dot"></i>
               Plot 10/10, Anantam Residency, Sabar sahi, Rasulgarh,
               Bhubaneswar-751010
             </p>
           </div>
           <div class="location">
-            <div id="map" style="height: 420px; width: 94%"></div>
+            <div id="map">
+              <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                  var map = L.map("map").setView([20.2928844, 85.8566821], 13);
+
+                  L.tileLayer(
+                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    {
+                      attribution:
+                        '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+                    }
+                  ).addTo(map);
+
+                  var marker = L.marker([20.2928844, 85.8566821]).addTo(map);
+                  marker
+                    .bindPopup(
+                      "Plot 10/10, Anantam Residency, Sabar sahi, Rasulgarh, Bhubaneswar-751010"
+                    )
+                    .openPopup();
+                });
+              </script>
+            </div>
           </div>
         </div>
         <div class="contact-form">
@@ -111,17 +133,22 @@
             </span>
             <span>
               <label for="service">Select Service</label>
-              <select name="service" required>
-                <option value="">Select Service</option>
-                <option value="corporate compliance">
-                  Corporate Compliance
-                </option>
-                <option value="international law">International Law</option>
-                <option value="regulatory advisory">Regulatory Advisory</option>
-                <option value="business formation">Business Formation</option>
-                <option value="contract law">Contract Law</option>
-                <option value="dispute resolution">Dispute Resolution</option>
-              </select>
+              <div id="customSelect" class="custom-dropdown">
+                <span id="selectedValue">Select Service</span>
+                <div class="dropdown-options">
+                  <div data-value="corporate compliance">
+                    Corporate Compliance
+                  </div>
+                  <div data-value="international law">International Law</div>
+                  <div data-value="regulatory advisory">
+                    Regulatory Advisory
+                  </div>
+                  <div data-value="business formation">Business Formation</div>
+                  <div data-value="contract law">Contract Law</div>
+                  <div data-value="dispute resolution">Dispute Resolution</div>
+                </div>
+              </div>
+              <input type="hidden" name="service" id="service" required />
             </span>
             <span>
               <label for="details">Project Details*</label>
@@ -136,8 +163,9 @@
           <button type="submit" class="submit-btn">Submit</button>
         </div>
       </div>
-    </section>
+    </div>
 
+    <!-- Map -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -154,6 +182,23 @@
             "Plot 10/10, Anantam Residency, Sabar sahi, Rasulgarh, Bhubaneswar-751010"
           )
           .openPopup();
+      });
+    </script>
+
+    <!-- Nav -->
+    <script>
+      const hamburg = document.querySelector(".ham-burg");
+      const navLinks = document.querySelector(".nav-links");
+      const navItems = document.querySelectorAll(".nav-l");
+
+      hamburg.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      navItems.forEach(list, () => {
+        list.addEventListener("click", () => {
+          navLinks.classList.toggle("remove");
+        });
       });
     </script>
   </body>

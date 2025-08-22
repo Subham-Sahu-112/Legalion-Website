@@ -33,9 +33,6 @@
             <a href="service.html" class="nav-l link">
               <li>Services</li>
             </a>
-            <a href="Team.html" class="nav-l link">
-              <li>Team</li>
-            </a>
             <a href="about.html" class="nav-l link">
               <li>About</li>
             </a>
@@ -79,10 +76,18 @@
             Take charge of your business continuity with innovative IT Solution.
           </h1>
           <div class="btns">
-            <a href="#contact" class="btn-1" style="border: 3.5px solid #fa911a">
+            <a
+              href="#contact"
+              class="btn-1"
+              style="border: 3.5px solid #fa911a"
+            >
               <span>Schedule a free consultant</span>
             </a>
-            <a href="#contact" class="btn-2" style="border: 3.5px solid #ff0000">
+            <a
+              href="#contact"
+              class="btn-2"
+              style="border: 3.5px solid #ff0000"
+            >
               <span>Our Services</span>
             </a>
           </div>
@@ -105,7 +110,7 @@
               alt="order-completed"
             />
             <span>
-              <h1>50+</h1>
+              <h1 class="fifty">50+</h1>
               <h2>Active Projects</h2>
             </span>
           </div>
@@ -188,8 +193,8 @@
     <!-- We Serve -->
     <section class="industry" id="industry">
       <div class="industry-container">
-        <h1>Industries we provide</h1>
-        <p>
+        <h1 class="industry-head">Industries we provide</h1>
+        <p class="industry-head-desc">
           Discover the wide range of industries we empower with tailored
           solutions. From finance, healthcare, and education to manufacturing,
           retail, and technology, our expertise adapts to your sector’s unique
@@ -312,10 +317,8 @@
           </div>
         </div>
         <div class="container-2">
-          <h1 style="font-size: 2.7rem; font-weight: bold">
-            Services <span style="color: #fa911a">we provide</span>
-          </h1>
-          <h1 style="text-align: center; font-weight: 400">
+          <h1 class="container-2-header">Services <span>we provide</span></h1>
+          <h1 class="container-2-header-2">
             Get Everything you need effortlessly, with seamless integration that
             puts all your digital tools together!
           </h1>
@@ -544,25 +547,22 @@
         <div class="contact-info">
           <div class="info">
             <h1>Contact Information</h1>
-            <p>
+            <p class="mobile">
               <i class="fa-solid fa-phone"></i>
               +91 9945293599
             </p>
-            <p>
+            <p class="email">
               <i class="fa-regular fa-envelope"></i>
               info@Legalion.co.in
             </p>
-            <p>
+            <p class="address">
               <i class="fa-solid fa-location-dot"></i>
               Plot 10/10, Anantam Residency, Sabar sahi, Rasulgarh,
               Bhubaneswar-751010
             </p>
           </div>
           <div class="location">
-            <div
-              id="map"
-              style="height: 420px; width: 85%; border: 2px solid red"
-            >
+            <div id="map">
               <script>
                 document.addEventListener("DOMContentLoaded", function () {
                   var map = L.map("map").setView([20.2928844, 85.8566821], 13);
@@ -620,17 +620,22 @@
             </span>
             <span>
               <label for="service">Select Service</label>
-              <select name="service" required>
-                <option value="">Select Service</option>
-                <option value="corporate compliance">
-                  Corporate Compliance
-                </option>
-                <option value="international law">International Law</option>
-                <option value="regulatory advisory">Regulatory Advisory</option>
-                <option value="business formation">Business Formation</option>
-                <option value="contract law">Contract Law</option>
-                <option value="dispute resolution">Dispute Resolution</option>
-              </select>
+              <div id="customSelect" class="custom-dropdown">
+                <span id="selectedValue">Select Service</span>
+                <div class="dropdown-options">
+                  <div data-value="corporate compliance">
+                    Corporate Compliance
+                  </div>
+                  <div data-value="international law">International Law</div>
+                  <div data-value="regulatory advisory">
+                    Regulatory Advisory
+                  </div>
+                  <div data-value="business formation">Business Formation</div>
+                  <div data-value="contract law">Contract Law</div>
+                  <div data-value="dispute resolution">Dispute Resolution</div>
+                </div>
+              </div>
+              <input type="hidden" name="service" id="service" required />
             </span>
             <span>
               <label for="details">Project Details*</label>
@@ -695,6 +700,34 @@
         );
 
         containers.forEach((container) => observer.observe(container));
+      });
+    </script>
+
+    <!-- service -->
+    <script>
+      const customSelect = document.getElementById("customSelect");
+      const selectedValue = document.getElementById("selectedValue");
+      const hiddenInput = document.getElementById("service");
+      const options = customSelect.querySelectorAll(".dropdown-options div");
+
+      customSelect.addEventListener("click", () => {
+        customSelect.classList.toggle("open");
+      });
+
+      options.forEach((option) => {
+        option.addEventListener("click", (e) => {
+          const value = e.target.getAttribute("data-value");
+          selectedValue.textContent = e.target.textContent;
+          hiddenInput.value = value;
+          customSelect.classList.remove("open");
+        });
+      });
+
+      // Optional: Close dropdown when clicking outside
+      document.addEventListener("click", function (e) {
+        if (!customSelect.contains(e.target)) {
+          customSelect.classList.remove("open");
+        }
       });
     </script>
 

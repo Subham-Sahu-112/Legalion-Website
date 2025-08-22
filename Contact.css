@@ -26,7 +26,7 @@ nav {
   top: 0;
   z-index: 999;
   box-sizing: border-box;
-  opacity: 1;
+  opacity: 0;
   transform: translateY(30px);
   animation: fadeIn 1.5s ease forwards;
 }
@@ -43,15 +43,16 @@ nav {
 }
 
 .logo {
-  width: 30%;
+  width: 20%;
+  height: auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.logo h1 {
-  font-size: 3rem;
-  color: white;
+.logo img {
+  width: 220px;
+  height: auto;
 }
 
 .nav-links {
@@ -114,8 +115,72 @@ nav {
   box-shadow: inset 0px 0px 10px 2px rgba(255, 255, 255, 0.8);
 }
 
+@media (max-width: 480px) {
+  nav {
+    height: 100px;
+    padding: 0 1rem;
+  }
+  .logo {
+    width: 40%;
+  }
+  .logo img {
+    width: 150px;
+  }
+  .nav-links {
+    height: max-content;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 1rem;
+    display: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    padding: 3rem 0;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    animation: menu 0.8s ease forwards;
+  }
+  @keyframes menu {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .nav-links ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+    padding-left: 3rem;
+  }
+  .nav-links ul li {
+    font-size: 1.5rem;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .hamb i {
+    font-size: 2rem;
+  }
+  .cont {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: none;
+    box-shadow: none;
+    margin-left: -1.3rem;
+  }
+}
+
+/* Contact */
 .contact {
   width: 100%;
+  height: max-content;
   background: radial-gradient(circle at center, #074299 0%, #001432 100%);
   display: flex;
   flex-direction: column;
@@ -134,6 +199,8 @@ nav {
   text-align: center;
 }
 .contact-head h1 {
+  color: orange;
+  text-shadow: 0px 0px 50px orange;
   font-size: 1.8rem;
   font-weight: bold;
 }
@@ -146,13 +213,15 @@ nav {
 }
 .contact-info {
   width: 50%;
+  height: 705px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 .contact-info .info {
+  width: 80%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 2rem;
   background: rgba(255, 255, 255, 0.075);
@@ -172,56 +241,101 @@ nav {
   color: orange;
   text-shadow: 0px 0px 10px black;
 }
+.info p i {
+  color: orange;
+}
 .contact-info .location {
   width: 100%;
   height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 1rem;
+}
+.location #map {
+  height: 420px;
+  width: 85%;
+  border-radius: 0.5rem;
 }
 .contact-form {
   width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+}
+.contact-form label {
+  color: orange;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 .form-inp {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 2rem;
   padding: 2rem 0;
 }
 .form-inp span {
-  width: 100%;
+  width: 87%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 0.5rem;
 }
-.form-inp input,
-.form-inp select {
+.custom-dropdown {
+  width: 80%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  padding: 1rem;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: black;
+  z-index: 10;
+}
+
+.dropdown-options div {
+  padding: 8px;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+}
+
+.dropdown-options div:hover {
+  background-color: #f0f0f0;
+}
+
+.custom-dropdown.open .dropdown-options {
+  display: block;
+}
+.form-inp input {
   width: 85%;
   height: 50px;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 15px;
+  font-size: 1.05rem;
   color: white;
   background-color: rgba(255, 255, 255, 0.3);
   padding: 0 1rem;
   caret-color: white;
   box-sizing: border-box;
-}
-.form-inp select {
-  /* color: black; */
-  caret-color: transparent;
-}
-.form-inp select option {
-  color: black;
-}
-.form-inp input:focus {
-  outline: none;
 }
 .form-inp input::placeholder {
   color: white;
@@ -239,6 +353,9 @@ nav {
   border: 2px solid #0066ff;
   border-radius: 15px;
   font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: white;
   background-color: #0066ff;
   display: flex;
   justify-content: center;
@@ -248,32 +365,79 @@ nav {
 .contact-form .submit-btn:hover {
   background-color: #0053cf;
 }
-/* .contact-head {
-  opacity: 0;
-  transform: translateY(-100px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-.contact-head.visible {
+.contact-head {
   opacity: 1;
-  transform: translateX(0);
+  transition: opacity 1s ease, transform 1s ease;
 }
 .contact-info {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-.contact-info.visible {
   opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.2s;
+  transition: opacity 1s ease, transform 1s ease;
 }
 .contact-form {
-  opacity: 0;
-  transform: translateX(50px);
+  opacity: 1;
   transition: opacity 1s ease, transform 1s ease;
 }
-.contact-form.visible {
-  opacity: 1;
-  transform: translate(0);
-  transition-delay: 0.5s;
-} */
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 2rem 0;
+    padding-top: 8rem;
+  }
+  .contact-head h1 {
+    font-size: 2rem;
+  }
+  .contact-head h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .contact-section {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .contact-info {
+    width: 100%;
+  }
+  .contact-info .info {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin: 0;
+  }
+  .contact-info .info h1 {
+    font-size: 1.5rem;
+  }
+  .contact-info .info p {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: start;
+  }
+  .location {
+    margin-top: 0;
+  }
+  .location #map {
+    width: 95%;
+    height: 100%;
+  }
+  .contact-form {
+    width: 100%;
+  }
+  .form-inp span {
+    width: 95%;
+  }
+  .form-inp input,
+  .form-inp select {
+    width: 95%;
+  }
+  .form-inp select option {
+    width: 70%;
+  }
+  .form-inp textarea {
+    width: 85%;
+  }
+  .custom-dropdown {
+    width: 85%;
+  }
+}

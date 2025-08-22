@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="it.css" />
+  </head>
+  <body>
+    <!-- Nav -->
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="Images/logo.png" alt="logo" />
+        </div>
+        <div class="nav-links">
+          <ul>
+            <a href="index.html#home" class="nav-l link">
+              <li>Home</li>
+            </a>
+            <a href="service.html" class="nav-l link">
+              <li>Services</li>
+            </a>
+            <a href="about.html" class="nav-l link">
+              <li>About</li>
+            </a>
+            <a href="contact.html#contact" class="nav-l cont">
+              <li>Contact</li>
+            </a>
+          </ul>
+        </div>
+        <div class="hamb">
+          <i class="fa-solid fa-bars ham-burg"></i>
+        </div>
+      </nav>
+    </header>
+
+    <script>
+      const hamburg = document.querySelector(".ham-burg");
+      const navLinks = document.querySelector(".nav-links");
+      const navItems = document.querySelectorAll(".nav-l");
+
+      hamburg.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      navItems.forEach(list, () => {
+        list.addEventListener("click", () => {
+          navLinks.classList.toggle("remove");
+        });
+      });
+    </script>
+
+    <!-- IT -->
+    <div class="IT-service">
+      <div class="head-container">
+        <img src="Images/it.jpg" alt="service" />
+        <h1>Services We Provide</h1>
+      </div>
+      <div class="it-container">
+        <h1>IT Services</h1>
+        <p class="head-desc">
+          Empower your business with reliable, scalable, and secure IT solutions
+          tailored to your needs. Our comprehensive IT services are designed to
+          help you stay ahead in a rapidly evolving digital landscape. Whether
+          you're looking to streamline operations, enhance cybersecurity, or
+          migrate to the cloud, our expert team is here to support you every
+          step of the way.
+        </p>
+        <div class="content">
+            <ul>
+          Our IT services include:
+          <li>Managed IT Support</li>
+          <p>
+            Proactive monitoring, maintenance, and technical support to keep
+            your systems running smoothly.
+          </p>
+          <li>Network Solutions</li>
+          <p>
+            Design, setup, and management of fast, secure, and scalable
+            networks.
+          </p>
+          <li>Cloud Services</li>
+          <p>
+            Migration, optimization, and management of cloud infrastructure for
+            flexibility and cost-efficiency.
+          </p>
+          <li>IT Consulting</li>
+          <p>
+            Strategic guidance to align your technology with your business
+            goals.
+          </p>
+          <li>Data Backup & Recovery</li>
+          <p>
+            Reliable solutions to safeguard your data and ensure business
+            continuity.
+          </p>
+        </ul>
+        <img src="Images/IT-service.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

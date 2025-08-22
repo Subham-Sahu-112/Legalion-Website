@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
+    <!-- Nav -->
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="Images/logo.png" alt="logo" />
+        </div>
+        <div class="nav-links">
+          <ul>
+            <a href="index.html#home" class="nav-l link">
+              <li>Home</li>
+            </a>
+            <a href="service.html" class="nav-l link">
+              <li>Services</li>
+            </a>
+            <a href="about.html" class="nav-l link">
+              <li>About</li>
+            </a>
+            <a href="contact.html#contact" class="nav-l cont">
+              <li>Contact</li>
+            </a>
+          </ul>
+        </div>
+        <div class="hamb">
+          <i class="fa-solid fa-bars ham-burg"></i>
+        </div>
+      </nav>
+    </header>
+
+    <script>
+      const hamburg = document.querySelector(".ham-burg");
+      const navLinks = document.querySelector(".nav-links");
+      const navItems = document.querySelectorAll(".nav-l");
+
+      hamburg.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      navItems.forEach(list, () => {
+        list.addEventListener("click", () => {
+          navLinks.classList.toggle("remove");
+        });
+      });
+    </script>
+
+    <div class="about">
+      <div class="container">
+        <h1 class="company">LEGALION – House of Law and Tech</h1>
+        <p class="company-desc"><strong>Where Legal Expertise Meets Digital Innovation</strong></p>
+        <p>
+          At <span class="highlight">LEGALION</span>, we operate at the
+          intersection of law and technology, delivering integrated solutions
+          that empower modern businesses to thrive. As a multidisciplinary firm,
+          we understand that today’s challenges demand more than traditional
+          services — they require a seamless blend of legal acumen, digital
+          innovation, and strategic foresight.
+        </p>
+        <p>
+          Our mission is to provide end-to-end support for businesses navigating
+          both legal complexities and digital transformation. Whether you are
+          addressing legal disputes, ensuring regulatory compliance, or scaling
+          your digital presence, LEGALION brings together legal professionals,
+          technologists, and marketing experts to drive real, measurable
+          results.
+        </p>
+
+        <h2>⚙️ Our Core Services</h2>
+        <div class="services">
+          <div class="service-box">
+            <h3>Dispute Resolution</h3>
+            <p style="text-align: start;">
+              Structured, technology-enhanced dispute resolution services
+              designed to resolve conflicts efficiently and strategically —
+              allowing you to focus on growth, not litigation.
+            </p>
+          </div>
+          <div class="service-box">
+            <h3>IBC Legal Advisory</h3>
+            <p style="text-align: start;">
+              Deep expertise in Insolvency and Bankruptcy Code (IBC) matters,
+              helping businesses with restructuring, compliance, and financial
+              recovery strategies.
+            </p>
+          </div>
+          <div class="service-box">
+            <h3>Corporate Legal Services</h3>
+            <p style="text-align: start;">
+              From contracts and governance to advisory and compliance, we
+              deliver full-spectrum legal services that keep your business
+              secure and future-ready.
+            </p>
+          </div>
+          <div class="service-box">
+            <h3>Digital & Tech Solutions</h3>
+            <p style="text-align: start;">
+              We help businesses grow with web/app development, digital
+              marketing, branding, UI/UX design, and ready-to-use software
+              products built for scale.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="choose">Why Choose LEGALION?</h2>
+        <p>
+          What sets us apart is our ability to bridge the gap between
+          traditional legal services and the demands of a tech-driven market. We
+          don’t just address problems — we design strategic, sustainable
+          frameworks that fuel innovation, compliance, and long-term growth.
+        </p>
+        <p>
+          With a client-first mindset and a results-driven approach, LEGALION is
+          your trusted partner for navigating the modern business landscape with
+          clarity and confidence.
+        </p>
+      </div>
+
+      <div class="footer">
+        LEGALION —
+        <em>Where Law Meets Technology, and Businesses Move Forward</em>
+      </div>
+    </div>
+  </body>
+</html>
