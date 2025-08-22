@@ -167,6 +167,9 @@ nav {
   .nav-links.active {
     display: flex;
   }
+  .hamb {
+    display: block;
+  }
   .hamb i {
     font-size: 2rem;
   }
