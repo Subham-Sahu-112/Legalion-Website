@@ -114,6 +114,9 @@ nav {
   background-color: transparent;
   box-shadow: inset 0px 0px 10px 2px rgba(255, 255, 255, 0.8);
 }
+.hamb {
+  display: none;
+}
 
 @media (max-width: 480px) {
   nav {
